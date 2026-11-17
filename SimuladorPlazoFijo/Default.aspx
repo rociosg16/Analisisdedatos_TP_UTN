@@ -18,15 +18,15 @@
                         <h4 class="text-primary fw-bold border-bottom pb-2 mb-3">Banco Provincia</h4>
                         <div class="mb-3">
                             <label class="form-label small fw-semibold">Tasa Año 1 (%):</label>
-                            <asp:TextBox ID="txtProvincia1" runat="server" CssClass="form-control" Text="70"></asp:TextBox>
+                            <asp:TextBox ID="txtProvincia1" runat="server" CssClass="form-control" placeholder="Ingresar tasas..."></asp:TextBox>
                         </div>
                         <div class="mb-3">
                             <label class="form-label small fw-semibold">Tasa Año 2 (%):</label>
-                            <asp:TextBox ID="txtProvincia2" runat="server" CssClass="form-control" Text="72"></asp:TextBox>
+                            <asp:TextBox ID="txtProvincia2" runat="server" CssClass="form-control" placeholder="Ingresar tasas..."></asp:TextBox>
                         </div>
                         <div class="mb-3">
                             <label class="form-label small fw-semibold">Tasa Año 3 (%):</label>
-                            <asp:TextBox ID="txtProvincia3" runat="server" CssClass="form-control" Text="75"></asp:TextBox>
+                            <asp:TextBox ID="txtProvincia3" runat="server" CssClass="form-control" placeholder="Ingresar tasas..."></asp:TextBox>
                         </div>
                     </div>
                 </div>
@@ -39,15 +39,15 @@
                         <h4 class="text-primary fw-bold border-bottom pb-2 mb-3">Banco Nación</h4>
                         <div class="mb-3">
                             <label class="form-label small fw-semibold">Tasa Año 1 (%):</label>
-                            <asp:TextBox ID="txtNacion1" runat="server" CssClass="form-control" Text="68"></asp:TextBox>
+                            <asp:TextBox ID="txtNacion1" runat="server" CssClass="form-control" placeholder="Ingresar tasas..."></asp:TextBox>
                         </div>
                         <div class="mb-3">
                             <label class="form-label small fw-semibold">Tasa Año 2 (%):</label>
-                            <asp:TextBox ID="txtNacion2" runat="server" CssClass="form-control" Text="70"></asp:TextBox>
+                            <asp:TextBox ID="txtNacion2" runat="server" CssClass="form-control" placeholder="Ingresar tasas..."></asp:TextBox>
                         </div>
                         <div class="mb-3">
                             <label class="form-label small fw-semibold">Tasa Año 3 (%):</label>
-                            <asp:TextBox ID="txtNacion3" runat="server" CssClass="form-control" Text="73"></asp:TextBox>
+                            <asp:TextBox ID="txtNacion3" runat="server" CssClass="form-control" placeholder="Ingresar tasas..."></asp:TextBox>
                         </div>
                     </div>
                 </div>
@@ -60,19 +60,20 @@
                         <h4 class="text-primary fw-bold border-bottom pb-2 mb-3">Banco Hipotecario</h4>
                         <div class="mb-3">
                             <label class="form-label small fw-semibold">Tasa Año 1 (%):</label>
-                            <asp:TextBox ID="txtHipotecario1" runat="server" CssClass="form-control" Text="72"></asp:TextBox>
+                            <asp:TextBox ID="txtHipotecario1" runat="server" CssClass="form-control" placeholder="Ingresar tasas..."></asp:TextBox>
                         </div>
                         <div class="mb-3">
                             <label class="form-label small fw-semibold">Tasa Año 2 (%):</label>
-                            <asp:TextBox ID="txtHipotecario2" runat="server" CssClass="form-control" Text="74"></asp:TextBox>
+                            <asp:TextBox ID="txtHipotecario2" runat="server" CssClass="form-control" placeholder="Ingresar tasas..."></asp:TextBox>
                         </div>
                         <div class="mb-3">
                             <label class="form-label small fw-semibold">Tasa Año 3 (%):</label>
-                            <asp:TextBox ID="txtHipotecario3" runat="server" CssClass="form-control" Text="76"></asp:TextBox>
+                            <asp:TextBox ID="txtHipotecario3" runat="server" CssClass="form-control" placeholder="Ingresar tasas..."></asp:TextBox>
                         </div>
                     </div>
                 </div>
             </div>
+          <asp:Button ID="btnCalcular" runat="server" Text="Calcular Mejor Opción" CssClass="btn btn-primary" OnClick="btnCalcular"/>
         </div>
     </div>
 </asp:Content>
