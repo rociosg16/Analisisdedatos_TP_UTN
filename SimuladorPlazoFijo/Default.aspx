@@ -73,7 +73,8 @@
                     </div>
                 </div>
             </div>
-          <asp:Button ID="btnCalcular" runat="server" Text="Calcular Mejor Opción" CssClass="btn btn-primary" OnClick="btnCalcular_Click" />
+          <asp:Button ID="btnCalcular" runat="server" Text="Calcular Promedio" CssClass="btn btn-primary" OnClick="btnCalcular_Click" />
+            <asp:Label ID="lblError" runat="server" ForeColor="#CC0000"></asp:Label>
         </div>
     </div>
 </asp:Content>
