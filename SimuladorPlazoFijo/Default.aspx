@@ -73,7 +73,7 @@
                     </div>
                 </div>
             </div>
-          <asp:Button ID="btnCalcular" runat="server" Text="Calcular Mejor Opción" CssClass="btn btn-primary" OnClick="btnCalcular"/>
+          <asp:Button ID="btnCalcular" runat="server" Text="Calcular Mejor Opción" CssClass="btn btn-primary" OnClick="btnCalcular_Click" />
         </div>
     </div>
 </asp:Content>
