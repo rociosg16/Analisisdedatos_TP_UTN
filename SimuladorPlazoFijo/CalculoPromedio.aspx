@@ -49,7 +49,7 @@
     </div> 
 
     <div class="text-center">
-        <asp:Button ID="btnSiguiente" runat="server" Text="Calcular Mejor Opción" CssClass="btn btn-primary btn-lg" />
+        <asp:Button ID="btnSiguiente" runat="server" Text="Calcular Mejor Opción" CssClass="btn btn-primary btn-lg" OnClick="btnSiguiente_Click" />
     </div>
 
 </asp:Content>
