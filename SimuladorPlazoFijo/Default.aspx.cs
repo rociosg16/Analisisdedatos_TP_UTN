@@ -20,46 +20,62 @@ namespace SimuladorPlazoFijo
             }
         }
 
+      
+        
         protected void btnCalcular_Click(object sender, EventArgs e)
         {
             lblError.Text = "";
+            lblError.Visible = false;
+
+            CultureInfo cultura = new CultureInfo("es-AR");
+
+            // --- Validación del Capital Inicial ---
+            if (!decimal.TryParse(txtCapital.Text.Trim(), NumberStyles.Number, cultura, out decimal capitalInicial) || capitalInicial <= 0)
+            {
+                lblError.Text = "Ingresá un capital inicial válido mayor a 0 (ej: 850000 o 850000,50).";
+                lblError.Visible = true;
+                return;
+            }
+
+            Session["CapitalInicial"] = capitalInicial;
 
             Validaciones();
 
             if (!string.IsNullOrEmpty(lblError.Text))
             {
+                lblError.Visible = true;
                 return;
             }
 
-            CultureInfo cultura = new CultureInfo("es-AR");
-            // --- 1. Lectura de texto Banco Provincia ---
-            decimal tasaProvincia1 = decimal.Parse(txtProvincia1.Text);
-            decimal tasaProvincia2 = decimal.Parse(txtProvincia2.Text);
-            decimal tasaProvincia3 = decimal.Parse(txtProvincia3.Text);
+            // ---  Lectura de texto Banco Provincia ---
+            decimal tasaProvincia1 = decimal.Parse(txtProvincia1.Text.Trim(), cultura);
+            decimal tasaProvincia2 = decimal.Parse(txtProvincia2.Text.Trim(), cultura);
+            decimal tasaProvincia3 = decimal.Parse(txtProvincia3.Text.Trim(), cultura);
 
-            // --- 2. Lectura de texto Banco Nación ---
-            decimal tasaNacion1 = decimal.Parse(txtNacion1.Text);
-            decimal tasaNacion2 = decimal.Parse(txtNacion2.Text);
-            decimal tasaNacion3 = decimal.Parse(txtNacion3.Text);
+            // ---  Lectura de texto Banco Nación ---
+            decimal tasaNacion1 = decimal.Parse(txtNacion1.Text.Trim(), cultura);
+            decimal tasaNacion2 = decimal.Parse(txtNacion2.Text.Trim(), cultura);
+            decimal tasaNacion3 = decimal.Parse(txtNacion3.Text.Trim(), cultura);
 
-            // --- 3. Lectura de texto Banco Hipotecario ---
-            decimal tasaHipotecario1 = decimal.Parse(txtHipotecario1.Text);
-            decimal tasaHipotecario2 = decimal.Parse(txtHipotecario2.Text);
-            decimal tasaHipotecario3 = decimal.Parse(txtHipotecario3.Text);
+            // --- Lectura de texto Banco Hipotecario ---
+            decimal tasaHipotecario1 = decimal.Parse(txtHipotecario1.Text.Trim(), cultura);
+            decimal tasaHipotecario2 = decimal.Parse(txtHipotecario2.Text.Trim(), cultura);
+            decimal tasaHipotecario3 = decimal.Parse(txtHipotecario3.Text.Trim(), cultura);
 
-            // --- 4. Cálculo de promedios usando la función  ---
+            // ---Cálculo de promedios usando la función ---
             decimal promedioProvincia = CalcularPromedio(tasaProvincia1, tasaProvincia2, tasaProvincia3);
             decimal promedioNacion = CalcularPromedio(tasaNacion1, tasaNacion2, tasaNacion3);
             decimal promedioHipotecario = CalcularPromedio(tasaHipotecario1, tasaHipotecario2, tasaHipotecario3);
 
-            Session["PromedioProvincia"] = promedioProvincia.ToString("N2");
-            Session["PromedioNacion"] = promedioNacion.ToString("N2");
-            Session["PromedioHipotecario"] = promedioHipotecario.ToString("N2");
+            Session["PromedioProvincia"] = promedioProvincia.ToString("N2", cultura);
+            Session["PromedioNacion"] = promedioNacion.ToString("N2", cultura);
+            Session["PromedioHipotecario"] = promedioHipotecario.ToString("N2", cultura);
 
             Response.Redirect("CalculoPromedio.aspx");
 
-
         }
+
+        
         private void Validaciones()
         {
 

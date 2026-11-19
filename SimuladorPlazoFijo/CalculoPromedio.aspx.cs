@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -28,7 +29,9 @@ namespace SimuladorPlazoFijo
             decimal promedioNacion = Convert.ToDecimal(Session["PromedioNacion"]);
             decimal promedioHipotecario = Convert.ToDecimal(Session["PromedioHipotecario"]);
 
-            decimal capitalInicial = 850000m;
+            decimal capitalInicial = Session["CapitalInicial"] != null
+             ? Convert.ToDecimal(Session["CapitalInicial"], new CultureInfo("es-AR"))
+             : 850000m;
 
             decimal rendimientoAnualProvincia = capitalInicial * (promedioProvincia / 100m);
             decimal rendimientoAnualNacion = capitalInicial * (promedioNacion / 100m);

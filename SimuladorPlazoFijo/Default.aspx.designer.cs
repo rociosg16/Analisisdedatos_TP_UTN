@@ -15,6 +15,15 @@ namespace SimuladorPlazoFijo
     {
 
         /// <summary>
+        /// Control txtCapital.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCapital;
+
+        /// <summary>
         /// Control txtProvincia1.
         /// </summary>
         /// <remarks>

@@ -6,11 +6,21 @@
         <!-- Título principal -->
         <div class="text-center mb-5">
             <h1 class="display-5 fw-bold text-primary">Simulador y Analizador de Plazos Fijos</h1>
-            <p class="text-muted lead">Análisis de capital inicial de $850.000 con historial de tasas (3 Años)</p>
+            <p class="text-muted lead">Ingresá el capital inicial y el historial de tasas (3 Años)</p>
         </div>
 
         <!-- Tarjetas de ingreso de tasas -->
         <div class="row g-4 mb-4">
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-6">
+                    <div class="card shadow-sm border-0 rounded-4">
+                        <div class="card-body p-4">
+                            <label class="form-label fw-bold text-primary">Capital Inicial ($):</label>
+                            <asp:TextBox ID="txtCapital" runat="server" CssClass="form-control" placeholder="Ej: 850000 o 850000,50"></asp:TextBox>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Banco Provincia -->
             <div class="col-md-4">
                 <div class="card shadow-sm border-0 h-100 rounded-4">
